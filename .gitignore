@@ -1,0 +1,46 @@
+# ===================== #
+# Arquivos do Python    #
+# ===================== #
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+
+# ===================== #
+# Virtual Environment   #
+# ===================== #
+venv/
+.env/
+.venv/
+
+# ===================== #
+# Django                #
+# ===================== #
+*.log
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# ===================== #
+# PostgreSQL            #
+# ===================== #
+*.sql
+*.dump
+
+# ===================== #
+# IDEs e Editores       #
+# ===================== #
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===================== #
+# Sistema Operacional   #
+# ===================== #
+.DS_Store
+Thumbs.db
