@@ -2,18 +2,17 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
-print("DB_HOST:", os.getenv("DB_HOST"))
-print("DB_NAME:", os.getenv("DB_NAME"))
+#print("DB_HOST:", os.getenv("DB_HOST"))
+#print("DB_NAME:", os.getenv("DB_NAME"))
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Carregar variáveis do arquivo .env
+load_dotenv(os.path.join(BASE_DIR, '.env'))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-8f658m48yb47!+y1p9$_+69(qoninbc^0*#c+(%j&p3c%nf79b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -48,7 +47,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'projeto.urls'
 
 TEMPLATES = [
-    {
+        {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
@@ -75,7 +74,10 @@ DATABASES = {
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT')
+        'PORT': os.getenv('DB_PORT'),
+        'OPTIONS': {
+            'sslmode' : 'require'
+        }
     }
     
 }

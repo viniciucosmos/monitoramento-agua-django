@@ -4,7 +4,7 @@ from .models import Leituras
 class LeiturasSerializer(serializers.ModelSerializer):
     class Meta:
         model = Leituras
-        fields = ['id', 'temperatura', 'ph', 'tds', 'data-hora']
+        fields = ['id', 'temperatura', 'ph', 'tds', 'data_hora']
 
 
     #Validação -  ph entre 0 e 14
@@ -20,6 +20,6 @@ class LeiturasSerializer(serializers.ModelSerializer):
     
     #Validação -  tds entre 0 e 2000
     def validate_tds(self, value):
-        if not (0 < value < 2000):
+        if not (0 <= value <= 2000):
             raise serializers.ValidationError("TDS deve estar entre 0 e 2000 ppm.")
         return value
