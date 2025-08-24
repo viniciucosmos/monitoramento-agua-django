@@ -2,10 +2,6 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
-#print("DB_HOST:", os.getenv("DB_HOST"))
-#print("DB_NAME:", os.getenv("DB_NAME"))
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
