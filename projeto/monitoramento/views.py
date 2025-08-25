@@ -2,6 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Leituras
 from .serializers import LeiturasSerializer
+from django.shortcuts import render
 
 #ENDPOINT
 
@@ -22,3 +23,6 @@ def registrar_leitura(request):
         serializer.save()
         return Response(serializer.data, status=201)
     return Response(serializer.errors, status=400)
+
+def dashboard(request):
+    return render(request, 'dashboard.html')

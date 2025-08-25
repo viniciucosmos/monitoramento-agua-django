@@ -1,0 +1,32 @@
+
+/* ARQUIVO PARA TESTES RAPIDOS */
+*{
+padding: 0;
+margin: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 10px;
+    gap: 15px;
+    max-width: 300px;      /* Limita a largura máxima */
+    width: 90%; 
+    background-color: rgb(3, 105, 3);
+    color: aliceblue;
+}
+
+.card p{
+    font-size: 30px;
+}

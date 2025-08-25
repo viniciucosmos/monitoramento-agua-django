@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monitoramento IoT</title>
+      {% load static %}
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+
+  </head>
+  <body>
+   
+    <p id="dados">Carregando...</p>
+
+    <script>
+      async function atualizar() {
+        try {
+          let resp = await fetch("/monitoramento/leituras/ultima/");
+          let data = await resp.json();
+
+          if (data.message) {
+            document.getElementById("dados").innerText = data.message;
+          } else {
+            document.getElementById("dados").innerHTML = `
+                <h1>Monitoramento</h1>
+                <div class="cards">
+                    <div class="card">
+                    <p>Temperatura</p>
+                    <p><strong>${data.temperatura}°C</strong></p>
+                </div>
+
+                <div class="card">
+                    <p>pH</p>
+                    <p><strong>${data.ph}</strong></p>
+                </div>
+
+                <div class="card">
+                    <p>TDS</p>
+                    <p><strong>${data.tds}</strong></p>
+                </div>
+                </div>
+`;
+          }
+        } catch (error) {
+          document.getElementById("dados").innerText = "Erro ao buscar dados.";
+        }
+      }
+
+      setInterval(atualizar, 60000); // atualiza a cada 1 minuto
+      atualizar();
+    </script>
+  </body>
+</html>
