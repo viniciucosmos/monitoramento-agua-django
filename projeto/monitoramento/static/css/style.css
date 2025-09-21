@@ -12,6 +12,7 @@ body {
     color: #333;
 }
 
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -22,29 +23,53 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+     font-size: 1.4rem;
 }
 
 .navbar .logo {
-    font-size: 1.5rem;
     font-weight: bold;
+     transition: transform 0.3s ease; /* Define a animação */
+}
+.navbar .logo:hover{
+    transform: scale(1.1); /* Define o tamanho padrão */
+  transition: transform 0.3s ease; /* Define a animação */
+}
+
+.link-duvidas {
+    display: flex;
+    align-items: center;
+    gap: 6px;             /* espaço entre ícone e texto */
+    text-decoration: none; /* remove sublinhado */
+    color: inherit;        /* mantém cor do texto da navbar */
+    font-weight: 500;
+      transition: transform 0.3s ease; /* Define a animação */
+
+}
+
+.link-duvidas .icon {
+    width: 24px;   /* tamanho do ícone */
+    height: 24px;
+    object-fit: contain;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
+    transition: transform 0.3s ease; /* Define a animação */
 }
 
-.nav-links a {
+.nav-links:hover{
+ transform: scale(1.1); /* Define o tamanho padrão */
+  transition: transform 0.3s ease; /* Define a animação */
+}
+
+.navbar a {
     text-decoration: none;
     color: white;
     font-weight: 500;
     transition: color 0.2s;
     font-weight: bold;
-}
-
-.nav-links a:hover {
-    color: #a8ffbf;
 }
 
 
@@ -98,8 +123,6 @@ h1 {
     transform: translateY(-5px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
     background: linear-gradient(145deg, #1565af, #4a67a7);
-
-
 }
 
 .card .label {
@@ -120,7 +143,7 @@ background: linear-gradient(145deg, #e02929, #e24e4e);
 @media (max-width: 600px) {
     .nav-links {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
     }
 }
 @media (max-width: 900px) {

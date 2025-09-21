@@ -12,16 +12,24 @@
 <body>
 
     <!-- Navbar padrão para todas as páginas -->
-    <nav class="navbar">
-    <div class="logo">
+   <nav class="navbar">
+    <a href="{% url 'dashboard' %}" class="logo">
         <img src="{% static 'img/peixes_branco.png' %}" alt="Logo" class="logo-img">
         <span>Sistema</span>
-    </div>
-        <ul class="nav-links">
-            <li><a href="{% url 'dashboard' %}">Monitoramento</a></li>
-            <li><a href="{% url 'duvidas' %}">Dúvidas</a></li>
-        </ul>
-    </nav>
+    </a>
+   
+   <ul class="nav-links">
+    <li>
+        <a href="{% url 'duvidas' %}" class="link-duvidas">
+            <img src="{% static 'img/duvida.png' %}" alt="Dúvidas" class="icon">
+            <span>Dúvidas</span>
+        </a>
+    </li>
+</ul>
+
+</nav>
+
+
 
     <!-- Conteúdo específico de cada página -->
     <main>
