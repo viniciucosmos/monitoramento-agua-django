@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block head %}{% endblock %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="icon" href="caminho/para/o/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{% static 'img/peixes.png' %}" type="image/png">
+
 </head>
 <body>
 
     <!-- Navbar padrão para todas as páginas -->
     <nav class="navbar">
-        <div class="logo">🐟 Sistema</div>
+    <div class="logo">
+        <img src="{% static 'img/peixes_branco.png' %}" alt="Logo" class="logo-img">
+        <span>Sistema</span>
+    </div>
         <ul class="nav-links">
             <li><a href="{% url 'dashboard' %}">Monitoramento</a></li>
             <li><a href="{% url 'duvidas' %}">Dúvidas</a></li>
