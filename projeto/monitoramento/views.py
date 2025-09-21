@@ -26,3 +26,6 @@ def registrar_leitura(request):
 
 def dashboard(request):
     return render(request, 'dashboard.html')
+
+def duvidas(request):
+    return render(duvidas, 'duvidas.html')

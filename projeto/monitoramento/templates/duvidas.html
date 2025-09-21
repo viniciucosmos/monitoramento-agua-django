@@ -1,11 +1,31 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duvidas</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+  <title>Dúvidas - Monitoramento IoT</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h1>Dúvidas / Valores Ideais</h1>
+
+<div class="cards">
+    <div class="card">
+        <p class="label">🌡️ Temperatura</p>
+        <p class="value">20 – 30 °C</p>
+        <p class="info">Faixa considerada ideal.</p>
+    </div>
+    <div class="card">
+        <p class="label">🧪 pH</p>
+        <p class="value">6 – 8</p>
+        <p class="info">Evita risco para organismos.</p>
+    </div>
+    <div class="card">
+        <p class="label">💧 TDS</p>
+        <p class="value">300 – 1200 ppm</p>
+        <p class="info">Acima disso pode indicar poluição.</p>
+    </div>
+</div>
+
+{% endblock %}

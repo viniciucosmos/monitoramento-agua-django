@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="caminho/para/o/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Navbar padrão para todas as páginas -->
+    <nav class="navbar">
+        <div class="logo">🐟 Sistema</div>
+        <ul class="nav-links">
+            <li><a href="{% url 'dashboard' %}">Monitoramento</a></li>
+            <li><a href="{% url 'duvidas' %}">Dúvidas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo específico de cada página -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Scripts específicos de cada página -->
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

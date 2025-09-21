@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(145deg, #049f2b, #03690f);
+    background: linear-gradient(145deg, #357ec4, #011541);
     padding: 15px 30px;
     color: white;
     position: sticky;
@@ -52,7 +52,7 @@ h1 {
     justify-content: center;
     padding: 20px;
     font-size: 2rem;
-    color: #03690f;
+    color: #011541;
 }
 
 .cards {
@@ -72,7 +72,7 @@ h1 {
     justify-content: center;
     padding: 30px;
     border-radius: 15px;
-    background: linear-gradient(145deg, #049f2b, #03690f);
+    background: linear-gradient(145deg, #357ec4, #011541);
     color: white;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -82,7 +82,7 @@ h1 {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(145deg, #02631a, #028311);
+    background: linear-gradient(145deg, #1565af, #4a67a7);
 
 
 }
