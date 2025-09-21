@@ -1,0 +1,54 @@
+async function atualizarDados() {
+  try {
+    let response = await fetch("/monitoramento/leituras/ultima/");
+    if (!response.ok) throw new Error("Erro na API");
+
+    let data = await response.json();
+
+    // Temperatura
+    const tempDiv = document.getElementById("temp-card");
+    const tempAlert = document.getElementById("temp-alert");
+    document.getElementById("temperatura").textContent = data.temperatura + " °C";
+
+    if (data.temperatura < 20 || data.temperatura > 30) {
+      tempDiv.classList.add("alerta");
+      tempAlert.textContent = "⚠️ Fora do ideal";
+    } else {
+      tempDiv.classList.remove("alerta");
+      tempAlert.textContent = "";
+    }
+
+    // pH
+    const phDiv = document.getElementById("ph-card");
+    const phAlert = document.getElementById("ph-alert");
+    document.getElementById("ph").textContent = data.ph;
+
+    if (data.ph < 6 || data.ph > 8) {
+      phDiv.classList.add("alerta");
+      phAlert.textContent = "⚠️ Fora do ideal";
+    } else {
+      phDiv.classList.remove("alerta");
+      phAlert.textContent = "";
+    }
+
+    // TDS
+    const tdsDiv = document.getElementById("tds-card");
+    const tdsAlert = document.getElementById("tds-alert");
+    document.getElementById("tds").textContent = data.tds + " ppm";
+
+    if (data.tds < 300 || data.tds > 1200) {
+      tdsDiv.classList.add("alerta");
+      tdsAlert.textContent = "⚠️ Fora do ideal";
+    } else {
+      tdsDiv.classList.remove("alerta");
+      tdsAlert.textContent = "";
+    }
+
+  } catch (error) {
+    console.error("Erro ao buscar dados:", error);
+  }
+}
+
+// Atualiza a cada 5 minutos
+setInterval(atualizarDados, 300000);
+atualizarDados();

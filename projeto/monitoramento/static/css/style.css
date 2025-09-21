@@ -1,4 +1,4 @@
-/*Se o estilo nao estiver sendo atualizado utilize o comando "ctrl + shift + r" */
+/* Se o estilo nao estiver sendo atualizado utilize o comando "ctrl + shift + r" */
 
 * {
     padding: 0;
@@ -10,6 +10,41 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f5f7fa;
     color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(145deg, #049f2b, #03690f);
+    padding: 15px 30px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #a8ffbf;
 }
 
 h1 {
@@ -24,9 +59,10 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-    padding: 20px;
+    padding: 25px;
     max-width: 1000px;
     margin: auto;
+    font-weight: bold;
 }
 
 .card {
@@ -38,16 +74,17 @@ h1 {
     border-radius: 15px;
     background: linear-gradient(145deg, #049f2b, #03690f);
     color: white;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 15px;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
     background: linear-gradient(145deg, #02631a, #028311);
 
-    
+
 }
 
 .card .label {
@@ -60,7 +97,17 @@ h1 {
     font-weight: bold;
 }
 
+.card.alerta {
+background: linear-gradient(145deg, #e02929, #e24e4e);
+}
+
 /* Responsivo */
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
 @media (max-width: 900px) {
     .cards {
         grid-template-columns: 1fr 1fr;
@@ -71,12 +118,15 @@ h1 {
     .cards {
         grid-template-columns: 1fr;
     }
+
     h1 {
         font-size: 1.5rem;
     }
+
     .card {
         padding: 20px;
     }
+
     .card .value {
         font-size: 1.8rem;
     }
