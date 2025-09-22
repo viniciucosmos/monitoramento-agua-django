@@ -7,11 +7,15 @@ async function atualizar() {
       // Temperatura
       const tempDiv = document.getElementById("temp-card");
       const tempAlert = document.getElementById("temp-alert");
-      document.getElementById("temperatura").textContent = data.temperatura + " °C";
+      document.getElementById("temperatura").textContent =
+        data.temperatura + " °C";
 
-      if (data.temperatura < 20 || data.temperatura > 30) {
+      if (data.temperatura < 26) {
         tempDiv.classList.add("alerta");
-        tempAlert.textContent = "⚠️ Fora do ideal";
+        tempAlert.textContent = "⚠️ Baixa";
+      } else if (data.temperatura > 30) {
+        tempDiv.classList.add("alerta");
+        tempAlert.textContent = "⚠️ Alta";
       } else {
         tempDiv.classList.remove("alerta");
         tempAlert.textContent = "";
@@ -22,9 +26,12 @@ async function atualizar() {
       const phAlert = document.getElementById("ph-alert");
       document.getElementById("ph").textContent = data.ph;
 
-      if (data.ph < 6 || data.ph > 8) {
+      if (data.ph < 6) {
         phDiv.classList.add("alerta");
-        phAlert.textContent = "⚠️ Fora do ideal";
+        phAlert.textContent = "⚠️ Baixo";
+      } else if (data.ph > 8) {
+        phDiv.classList.add("alerta");
+        phAlert.textContent = "⚠️ Alto";
       } else {
         phDiv.classList.remove("alerta");
         phAlert.textContent = "";
@@ -35,9 +42,12 @@ async function atualizar() {
       const tdsAlert = document.getElementById("tds-alert");
       document.getElementById("tds").textContent = data.tds + " ppm";
 
-      if (data.tds < 300 || data.tds > 1200) {
+      if (data.tds < 300) {
         tdsDiv.classList.add("alerta");
-        tdsAlert.textContent = "⚠️ Fora do ideal";
+        tdsAlert.textContent = "⚠️ Baixo";
+      } else if (data.tds > 1200) {
+        tdsDiv.classList.add("alerta");
+        tdsAlert.textContent = "⚠️ Alto";
       } else {
         tdsDiv.classList.remove("alerta");
         tdsAlert.textContent = "";
