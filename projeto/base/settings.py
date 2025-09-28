@@ -3,7 +3,10 @@ import os
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = Path(__file__).resolve().parent.parent
+
+# BASE_DIR agora aponta para a pasta projeto/
+BASE_DIR = Path(__file__).resolve().parent.parent  # Isso aponta para projeto/
 
 # Carregar variáveis do arquivo .env
 load_dotenv(os.path.join(BASE_DIR, '.env'))
@@ -24,8 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'base',
     'monitoramento',
-    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -39,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ]
 
-ROOT_URLCONF = 'projeto.urls'
+ROOT_URLCONF = 'base.urls'
 
 TEMPLATES = [
         {
@@ -56,7 +60,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'projeto.wsgi.application'
+WSGI_APPLICATION = 'base.wsgi.application'
 
 DATABASES = {
     'default': {
