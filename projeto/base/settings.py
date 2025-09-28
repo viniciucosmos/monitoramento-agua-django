@@ -8,14 +8,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Carregar variáveis do arquivo .env
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
-
-SECRET_KEY = 'django-insecure-8f658m48yb47!+y1p9$_+69(qoninbc^0*#c+(%j&p3c%nf79b'
+SECRET_KEY = os.getenv("SECRET_KEY", "unsafe-secret-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -69,7 +67,7 @@ DATABASES = {
         'HOST': os.getenv('DB_HOST'),
         'PORT': os.getenv('DB_PORT'),
         'OPTIONS': {
-            'sslmode' : 'require'
+            'sslmode' : 'require' #supabase só permite SSL
         }
     }
     
