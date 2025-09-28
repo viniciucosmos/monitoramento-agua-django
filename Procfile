@@ -1,2 +1,2 @@
-release: cd projeto && python manage.py collectstatic --noinput && python manage.py migrate
-web: cd projeto && PYTHONPATH=/app/projeto:/app gunicorn base.wsgi --bind 0.0.0.0:$PORT
+release: python projeto/manage.py collectstatic --noinput && python projeto/manage.py migrate
+web: gunicorn projeto.base.wsgi --bind 0.0.0.0:$PORT
