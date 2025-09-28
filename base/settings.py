@@ -2,9 +2,6 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-#BASE_DIR = Path(__file__).resolve().parent.parent
-
 # BASE_DIR agora aponta para a pasta projeto/
 BASE_DIR = Path(__file__).resolve().parent.parent  # Isso aponta para projeto/
 
@@ -48,7 +45,7 @@ ROOT_URLCONF = 'base.urls'
 TEMPLATES = [
         {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [os.path.join(BASE_DIR, 'projeto', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,6 +98,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Additional locations of static files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'projeto', 'staticfiles'),  # ← Seus arquivos atuais
+]
+
 
 # Whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
