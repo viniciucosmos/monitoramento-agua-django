@@ -2,6 +2,15 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
+# Carregar variáveis do .env
+from dotenv import load_dotenv
+load_dotenv()
+
+# Configurações Django
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = False
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+
 # BASE_DIR agora aponta para a pasta projeto/
 BASE_DIR = Path(__file__).resolve().parent.parent  # Isso aponta para projeto/
 
@@ -101,7 +110,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Additional locations of static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'projeto', 'staticfiles'),  # ← Seus arquivos atuais
+    os.path.join(BASE_DIR, 'projeto', 'staticfiles'),  # ← arquivos atuais
 ]
 
 

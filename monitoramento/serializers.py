@@ -6,7 +6,6 @@ class LeiturasSerializer(serializers.ModelSerializer):
         model = Leituras
         fields = ['id', 'temperatura', 'ph', 'tds', 'data_hora']
 
-
     #Validação -  ph entre 0 e 14
     def validate_ph(self, value):
         if not (0 <= value <= 14):
