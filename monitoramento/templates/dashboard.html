@@ -33,4 +33,11 @@
 
 {% block scripts %}
 <script src="{% static 'js/dashboard.js' %}"></script>
+
+<script>
+// Auto-refresh a cada 3 segundos
+setInterval(() => {
+    location.reload();
+},20000);
+</script>
 {% endblock %}
