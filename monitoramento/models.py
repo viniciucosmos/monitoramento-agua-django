@@ -1,9 +1,9 @@
 from django.db import models
 
 class Leituras(models.Model):
-    temperatura = models.IntegerField()
+    temperatura = models.FloatField()
     ph = models.FloatField()
-    tds = models.IntegerField()
+    tds = models.FloatField()
     data_hora = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
