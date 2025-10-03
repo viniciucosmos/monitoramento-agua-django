@@ -42,10 +42,7 @@ async function atualizar() {
       const tdsAlert = document.getElementById("tds-alert");
       document.getElementById("tds").textContent = data.tds + " ppm";
 
-      if (data.tds < 300) {
-        tdsDiv.classList.add("alerta");
-        tdsAlert.textContent = "⚠️ Baixo";
-      } else if (data.tds > 1200) {
+     if (data.tds >= 1200) {
         tdsDiv.classList.add("alerta");
         tdsAlert.textContent = "⚠️ Alto";
       } else {
